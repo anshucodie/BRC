@@ -30,11 +30,17 @@ def main(input_file_name = "src/testcase.txt", output_file_name = "src/output.tx
         # print(min_temp)
         max_temp = max(temp)
         sum = 0
+
         for j in temp:
             sum += float(j)
+        # print(sum)
         mean_temp = sum / len(temp) 
+        # print(mean_temp)
+
+        mean_str = f"{mean_temp:.2f}"[:-1]
+        # print(mean_str)
         
-        res = f"{city_names[x]}={min_temp:.1f}/{mean_temp:.1f}/{max_temp:.1f}\n"
+        res = f"{city_names[x]}={min_temp:.1f}/{mean_str}/{max_temp:.1f}\n"
         x += 1
         # print(res)
         output_file.write(res)
