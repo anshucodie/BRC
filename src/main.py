@@ -17,15 +17,17 @@ def main(input_file_name = "src/testcase.txt", output_file_name = "src/output.tx
     #print(OK)
     # print(data.keys())
     
-    city_names = list(data.keys())
-    city_names.sort()
+    city_names = sorted(data.keys())
     # print(city_names)
+    # print(data)
     
     x = 0
 
-    for i in (data):
+    for i in (city_names):
         temp = data[i]
+        # print(temp)
         min_temp = min(temp)
+        # print(min_temp)
         max_temp = max(temp)
         sum = 0
         for j in temp:
