@@ -1,12 +1,38 @@
-def main(input_file_name = "testcase.txt", output_file_name = "output.txt"):
+def main(input_file_name = "src/testcase.txt", output_file_name = "src/output.txt"):
     input_file = open(input_file_name, "r")
     output_file = open(output_file_name, "w")
 
-    first_line = input_file.readline().strip()
-    first_line = first_line.split(";")
+    data = {}
 
-    output_file.write(f"{first_line[0]}={first_line[1]}/{1}/{1}\n")
+    for i in input_file:
+        city, temp = i.strip().split(';')
+        # print(city)
+        # print(temp)
+        temp = float(temp)
+        
+        if city not in data:
+            data[city] = []
+        data[city].append(temp)
 
+    #print(OK)
+    # print(data.keys())
+    city_names = list(data.keys())
+    x = 0
+
+    for i in data:
+        temp = data[i]
+        min_temp = min(temp)
+        max_temp = max(temp)
+        sum = 0
+        for j in temp:
+            sum += float(j)
+        mean_temp = sum / len(temp) 
+        
+        res = f"{city_names[x]}={min_temp:.1f}/{mean_temp:.1f}/{max_temp:.1f}\n"
+        x += 1
+        # print(res)
+        output_file.write(res)
+        
     output_file.close()
     input_file.close()
 
