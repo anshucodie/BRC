@@ -1,6 +1,7 @@
 import math
+from decimal import Decimal, ROUND_HALF_UP
 
-def main(input_file_name = "src/testcase.txt", output_file_name = "src/output.txt"):
+def main(input_file_name = "testcase.txt", output_file_name = "output.txt"):
     input_file = open(input_file_name, "r")
     output_file = open(output_file_name, "w")
 
@@ -41,6 +42,7 @@ def main(input_file_name = "src/testcase.txt", output_file_name = "src/output.tx
         # print(mean_temp)
 
         mean_temp_rounded = (math.ceil(mean_temp * 10)) / 10
+        # mean_temp_rounded = round(mean_temp, 1)
 
         # mean_str = f"{mean_temp:.2f}"[:-1]
         # print(mean_str)

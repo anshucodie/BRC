@@ -2,6 +2,7 @@ services:
   boilerplate:
     image: ${CONTAINER_NAME}
     container_name: temp_${CONTAINER_NAME}
+    platform: linux/amd64
     build:
       context: .
       target: final
