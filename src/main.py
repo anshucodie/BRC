@@ -33,12 +33,7 @@ def main(input_file_name = "testcase.txt", output_file_name = "output.txt"):
         # print(min_temp)
         max_temp = max(temp)
         # print(max_temp)
-        sum = 0
-
-        for j in temp:
-            sum += float(j)
-        # print(sum)
-        mean_temp = sum / len(temp) 
+        mean_temp = sum(temp) / len(temp) 
         # print(mean_temp)
 
         mean_temp_rounded = (math.ceil(mean_temp * 10)) / 10
